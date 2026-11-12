@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dom Corte | Barbearia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--paper:#F4EFE6;--paper2:#ECE4D6;--surface:#FFFDF8;--line:#DCD1BF;--ink:#1B1B1F;--muted:#625C55;--navy:#1C2A44;--red:#C8372D;--cream:#F4EFE6;
+--a-card:#FFFDF8;--a-line:#DCD1BF;--a-ink:#1B1B1F;--a-muted:#625C55;--a-accent:#1C2A44;--a-accent-ink:#fff;--a-soft:#E7EAF1;
+--f-d:"DM Serif Display",Georgia,serif;--f-b:"Manrope","Segoe UI",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--f-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-d);font-weight:400;line-height:1.05;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.pole{height:8px;background:repeating-linear-gradient(-45deg,var(--red) 0 14px,#fff 14px 28px,var(--navy) 28px 42px,#fff 42px 56px)}
+.demo{background:var(--navy);color:#fff;font-size:12px;font-weight:700;text-align:center;padding:6px 12px}
+header{position:sticky;top:0;z-index:20;background:rgba(244,239,230,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;min-height:70px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap}
+.logo .seal{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:400 18px/1 var(--f-d);box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--navy)}
+.logo b{font:400 24px/1 var(--f-d)}
+.logo small{display:block;font:700 10px/1.4 var(--f-b);letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:800 15px/1 var(--f-b);text-decoration:none;border:2px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:#25375A}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{filter:brightness(1.06)}
+.btn-line{border-color:var(--navy);color:var(--navy)}.btn-line:hover{background:var(--navy);color:#fff}
+.nav .btn{min-height:44px;padding:0 18px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:420px){.logo small{display:none}.nav .btn{padding:0 14px;font-size:13px}}
+.hero{padding-block:60px 80px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--red)}
+.hero h1{font-size:clamp(48px,6.6vw,88px);margin-top:18px}
+.hero h1 em{color:var(--red)}
+.hero p.lead{color:var(--muted);font-size:19px;max-width:30em;margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.proof{display:flex;align-items:center;gap:14px;margin-top:34px;font-size:14px;color:var(--muted)}
+.proof .stars{color:#D49B1D;font-size:18px;letter-spacing:2px}
+.proof b{color:var(--ink)}
+.arch{position:relative;justify-self:center;width:min(100%,440px);max-width:100%}
+.arch .ph{aspect-ratio:4/5;border-radius:220px 220px 24px 24px;background:#ccc url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=70") center/cover;border:10px solid var(--surface);box-shadow:0 30px 60px -30px rgba(28,42,68,.5)}
+.arch .stripe{position:absolute;right:-18px;top:16%;bottom:20%;width:26px;border-radius:13px;background:repeating-linear-gradient(-45deg,var(--red) 0 10px,#fff 10px 20px,var(--navy) 20px 30px,#fff 30px 40px);box-shadow:0 0 0 4px var(--paper)}
+.arch .next{position:absolute;left:-28px;bottom:42px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 18px;box-shadow:0 18px 34px -16px rgba(28,42,68,.4);display:grid;gap:2px}
+.arch .next small{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.arch .next b{font:400 26px/1 var(--f-d);color:var(--navy)}
+.arch .next span{font-size:13px;color:#1C9B4F;font-weight:800}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px}.arch{width:min(100%,340px)}.arch .next{left:-6px}}
+section{padding-block:90px}
+.head{text-align:center;max-width:680px;margin:0 auto 46px;display:grid;gap:12px;justify-items:center}
+.head h2{font-size:clamp(40px,5vw,62px)}
+.head h2 em{color:var(--red)}
+.head p{color:var(--muted);font-size:17px}
+.board{background:var(--navy);color:#F4EFE6;border-radius:28px;padding:48px 52px;position:relative;overflow:hidden}
+.board::before{content:"";position:absolute;inset:12px;border:1px solid rgba(244,239,230,.25);border-radius:20px;pointer-events:none}
+.board h2{font-size:clamp(36px,4.4vw,52px);text-align:center}
+.board .sub{text-align:center;color:#C5CBD8;margin-top:8px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6px 56px;margin-top:34px}
+.li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(244,239,230,.12)}
+.li h3{font-size:24px}
+.li i{border-bottom:2px dotted rgba(244,239,230,.35);transform:translateY(-6px)}
+.li b{font:400 26px/1 var(--f-d);color:#F2C14E}
+.li small{grid-column:1/3;color:#AEB6C7;font-size:14px;margin-top:-6px}
+.li a{grid-column:3;justify-self:end;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:2px solid var(--red);margin-top:-6px}
+.combo{display:inline-block;margin-left:8px;background:var(--red);color:#fff;font:800 10px/1 var(--f-b);letter-spacing:.06em;text-transform:uppercase;padding:5px 7px;border-radius:999px;vertical-align:middle}
+@media (max-width:820px){.board{padding:34px 22px}.cols{grid-template-columns:1fr}}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.barber{background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.barber .ph{aspect-ratio:4/3;background:#ccc center/cover}
+.barber div.tx{padding:20px 22px 24px;display:grid;gap:6px}
+.barber h3{font-size:28px}
+.barber span{color:var(--red);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.barber p{color:var(--muted);font-size:15px}
+@media (max-width:900px){.team{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.team{grid-template-columns:1fr}}
+.club{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--paper2);border:1px solid var(--line);border-radius:28px;padding:48px}
+.club h2{font-size:clamp(36px,4.4vw,54px)}
+.club h2 em{color:var(--red)}
+.club p{color:var(--muted);margin-top:14px;font-size:17px}
+.card{background:var(--surface);border:2px solid var(--navy);border-radius:22px;padding:28px;display:grid;gap:14px;box-shadow:10px 10px 0 var(--navy)}
+.card .pr{font:400 58px/1 var(--f-d);color:var(--navy)}
+.card .pr small{font:700 15px/1 var(--f-b);color:var(--muted)}
+.card ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-weight:600}
+.card li::before{content:"✂";color:var(--red);margin-right:10px}
+@media (max-width:860px){.club{grid-template-columns:1fr;padding:30px 22px}}
+.info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:12px;align-content:start}
+.box h3{font-size:30px}
+.rows div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line)}
+.rows div:last-child{border:0}.rows span{color:var(--muted)}
+@media (max-width:760px){.info{grid-template-columns:1fr}}
+footer{background:var(--navy);color:#C5CBD8;padding-block:30px 100px;font-size:14px;text-align:center}
+footer a{color:#fff;font-weight:800}
+.fwa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#1C9B4F;color:#fff;display:grid;place-items:center;z-index:30;box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+.fwa svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+<div class="demo">Modelo de demonstração · <a href="https://www.ocoronato.com.br" target="_blank" rel="noopener">Quero um site assim</a></div>
+<div class="pole" aria-hidden="true"></div>
+<header><div class="wrap nav">
+  <a class="logo" href="#"><span class="seal">DC</span><span><b>Dom Corte</b><small>Barbearia · desde 2015</small></span></a>
+  <ul><li><a href="#precos">Preços</a></li><li><a href="#barbeiros">Barbeiros</a></li><li><a href="#clube">Clube</a></li><li><a href="#agendar">Agendar</a></li></ul>
+  <a class="btn btn-navy" href="#agendar">Agendar</a>
+</div></header>
+
+<section class="hero" aria-label="Início"><div class="wrap">
+  <div>
+    <span class="eyebrow">Barbearia clássica · Centro</span>
+    <h1>Barba, cabelo e bigode. <em>Com hora marcada.</em></h1>
+    <p class="lead">Atendimento sem pressa, toalha quente e acabamento na navalha. Escolha seu barbeiro e o horário pelo celular.</p>
+    <div class="ctas"><a class="btn btn-red" href="#agendar">Agendar meu horário</a><a class="btn btn-line" href="#precos">Ver preços</a></div>
+    <div class="proof"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,9 no Google</b> · mais de 300 avaliações</span></div>
+  </div>
+  <div class="arch">
+    <div class="ph" role="img" aria-label="Interior da barbearia"></div>
+    <span class="stripe" aria-hidden="true"></span>
+    <div class="next"><small>Próximo horário livre</small><b id="prox">Hoje, 15:30</b><span>● Agenda aberta</span></div>
+  </div>
+</div></section>
+
+<section id="precos" style="padding-top:0"><div class="wrap">
+  <div class="board">
+    <h2>Tabela de preços</h2>
+    <p class="sub">Pagamento na hora, em Pix, cartão ou dinheiro.</p>
+    <div class="cols">
+      <div class="li"><h3>Corte</h3><i></i><b>R$ 40</b><small>40 min · tesoura ou máquina</small><a href="#agendar" data-agendar="0">Agendar</a></div>
+      <div class="li"><h3>Barba</h3><i></i><b>R$ 30</b><small>30 min · toalha quente e navalha</small><a href="#agendar" data-agendar="1">Agendar</a></div>
+      <div class="li"><h3>Corte e barba <span class="combo">Combo</span></h3><i></i><b>R$ 60</b><small>1h · economize R$ 10</small><a href="#agendar" data-agendar="2">Agendar</a></div>
+      <div class="li"><h3>Degradê</h3><i></i><b>R$ 45</b><small>45 min · navalhado</small><a href="#agendar" data-agendar="3">Agendar</a></div>
+      <div class="li"><h3>Bigode</h3><i></i><b>R$ 15</b><small>15 min · desenho e acabamento</small><a href="#agendar" data-agendar="4">Agendar</a></div>
+      <div class="li"><h3>Sobrancelha</h3><i></i><b>R$ 15</b><small>15 min · na navalha</small><a href="#agendar" data-agendar="5">Agendar</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="barbeiros" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Os <em>barbeiros</em></h2><p>Cada um com seu estilo. Na hora de agendar, é só dizer com quem você prefere.</p></div>
+  <div class="team">
+    <article class="barber"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=70')"></div><div class="tx"><span>Fundador</span><h3>Marcos</h3><p>Especialista em barba e cortes clássicos.</p></div></article>
+    <article class="barber"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?auto=format&fit=crop&w=700&q=70')"></div><div class="tx"><span>Degradê</span><h3>Rafa</h3><p>Fade, navalhado e desenhos na máquina.</p></div></article>
+    <article class="barber"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?auto=format&fit=crop&w=700&q=70')"></div><div class="tx"><span>Tesoura</span><h3>Léo</h3><p>Cortes longos e repaginação de visual.</p></div></article>
+  </div>
+</div></section>
+
+<section id="clube" style="padding-top:0"><div class="wrap">
+  <div class="club">
+    <div><span class="eyebrow">Assinatura mensal</span><h2 style="margin-top:14px">Clube do <em>corte</em></h2><p>Pague uma vez por mês e corte quantas vezes quiser. Ideal para quem não deixa o cabelo passar do ponto.</p></div>
+    <div class="card">
+      <p class="pr">R$ 89<small> /mês</small></p>
+      <ul><li>Cortes ilimitados no mês</li><li>Barba com 50% de desconto</li><li>Prioridade na agenda</li></ul>
+      <a class="btn btn-navy" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20entrar%20no%20Clube%20do%20corte." target="_blank" rel="noopener">Quero assinar</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="agendar" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Agende seu <em>horário</em></h2><p>Escolha o serviço, o dia e o horário. Sem cadastro e sem pagamento antecipado.</p></div>
+  <div id="agenda"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap info">
+  <div class="box"><h3>Onde estamos</h3><p>Av. Exemplo, 100 · Centro · Pérola, PR</p><p style="color:var(--muted)">Na esquina da praça, com estacionamento na rua.</p><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Centro%20P%C3%A9rola%20PR" target="_blank" rel="noopener">Como chegar</a></div>
+  <div class="box"><h3>Horário</h3><div class="rows"><div><span>Segunda</span><b>Fechado</b></div><div><span>Terça a sexta</span><b>9h às 20h</b></div><div><span>Sábado</span><b>8h às 17h</b></div><div><span>Domingo</span><b>Fechado</b></div></div></div>
+</div></section>
+
+<div class="pole" aria-hidden="true"></div>
+<footer>Dom Corte é um exemplo fictício · Site por <a href="https://www.ocoronato.com.br" target="_blank" rel="noopener">Felipe Coronato</a></footer>
+<a class="fwa" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Vi%20o%20exemplo%20da%20barbearia%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg></a>
+<script>
+window.AGENDA = { nome: "Dom Corte", whatsapp: "5544997128291", palavra: "Agendamento", rotulo: "Serviço", botao: "Confirmar pelo WhatsApp",
+  servicos: [ {n:"Corte",d:"40 min",p:40}, {n:"Barba",d:"30 min",p:30}, {n:"Corte e barba",d:"1h",p:60}, {n:"Degradê",d:"45 min",p:45}, {n:"Bigode",d:"15 min",p:15}, {n:"Sobrancelha",d:"15 min",p:15} ],
+  horas: ["09:00","09:40","10:20","11:00","13:30","14:10","14:50","15:30","16:10","16:50","17:30","18:10","18:50"], fechado: [0, 1],
+  extra: { label: "Barbeiro preferido", ph: "Marcos, Rafa, Léo ou tanto faz" } };
+(function () {
+  var d = new Date(), h = d.getHours(), dia = d.getDay(), t = ["10:20", "13:30", "15:30", "17:30"].filter(function (x) { return +x.slice(0, 2) > h; })[0];
+  document.getElementById("prox").textContent = (dia === 0 || dia === 1 || !t) ? "Amanhã, 09:00" : "Hoje, " + t;
+})();
+</script>
+<script src="../agenda.js"></script>
+</body>
+</html>

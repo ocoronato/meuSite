@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ritmo Fit | Academia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#090B0F;--bg2:#10141B;--card:#141922;--line:#232A36;--ink:#F2F4F7;--muted:#98A2B3;--hot:#FF5A1F;--hot-ink:#fff;
+--a-card:#141922;--a-line:#232A36;--a-ink:#F2F4F7;--a-muted:#98A2B3;--a-accent:#FF5A1F;--a-accent-ink:#fff;--a-soft:rgba(255,90,31,.12);
+--f-d:"Anton","Impact",sans-serif;--f-b:"Inter","Segoe UI",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-d);font-weight:400;text-transform:uppercase;line-height:.95;margin:0;letter-spacing:.01em}
+p{margin:0}a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.demo{background:var(--hot);color:#fff;font-size:12px;font-weight:700;text-align:center;padding:6px 12px}
+header{position:sticky;top:0;z-index:20;background:rgba(9,11,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;min-height:64px}
+.logo{font:400 26px/1 var(--f-d);text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+.logo b{color:var(--hot);font-weight:400}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:800 14px/1 var(--f-b);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-hot{background:var(--hot);color:var(--hot-ink)}.btn-hot:hover{filter:brightness(1.08)}
+.btn-line{border-color:#3A4352;color:var(--ink)}.btn-line:hover{border-color:var(--ink)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:12px}
+@media (max-width:820px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+.hero{position:relative;min-height:min(88vh,740px);display:flex;align-items:center;text-align:center;background:#000 url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=70") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 40%,rgba(9,11,15,.55),rgba(9,11,15,.92)),linear-gradient(0deg,var(--bg),transparent 35%)}
+.hero .wrap{position:relative;padding-block:80px;width:100%;display:grid;justify-items:center}
+.tag{font-size:13px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--hot)}
+.hero h1{font-size:clamp(70px,13vw,170px);margin-top:14px}
+.hero p.lead{color:#D0D5DD;font-size:18px;max-width:34em;margin-top:18px}
+.hero .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-56px;position:relative;z-index:2}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+.stats b{display:block;font:400 42px/1 var(--f-d);color:var(--ink)}
+.stats span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr;margin-top:-30px}}
+section{padding-block:90px}
+.head{text-align:center;max-width:720px;margin:0 auto 44px;display:grid;gap:14px;justify-items:center}
+.head h2{font-size:clamp(44px,6vw,76px)}
+.head h2 b{color:var(--hot);font-weight:400}
+.head p{color:var(--muted);font-size:17px}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.why article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;gap:10px}
+.why svg{width:34px;height:34px;color:var(--hot)}
+.why h3{font-size:26px}
+.why p{color:var(--muted);font-size:15px}
+.mods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.mod{position:relative;border-radius:18px;overflow:hidden;min-height:300px;display:flex;align-items:flex-end;background:#222 center/cover}
+.mod::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,11,15,.95),rgba(9,11,15,.1) 65%)}
+.mod div{position:relative;padding:20px;display:grid;gap:6px}
+.mod h3{font-size:30px}
+.mod p{color:#C9CFD8;font-size:14px}
+@media (max-width:960px){.why,.mods{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.why,.mods{grid-template-columns:1fr}.mod{min-height:220px}}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:18px}
+.plan.hot{border:2px solid var(--hot);background:linear-gradient(180deg,rgba(255,90,31,.10),var(--card) 40%)}
+.plan .badge{align-self:flex-start;background:var(--hot);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.plan h3{font-size:32px}
+.plan .pr{font:400 54px/1 var(--f-d)}.plan .pr small{font:600 15px/1 var(--f-b);color:var(--muted)}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;color:#D0D5DD;font-size:15px}
+.plan li::before{content:"✓";color:var(--hot);font-weight:800;margin-right:10px}
+.plan .btn{margin-top:auto}
+@media (max-width:900px){.plans{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+.quote{background:var(--bg2);border-block:1px solid var(--line)}
+.quote .wrap{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;max-width:960px}
+.quote .av{width:120px;height:120px;border-radius:50%;background:#333 url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=400&q=70") center/cover;border:3px solid var(--hot)}
+.quote blockquote{margin:0;font-size:clamp(20px,2.4vw,26px);line-height:1.4;font-weight:600}
+.quote cite{display:block;margin-top:14px;font-style:normal;color:var(--muted);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:640px){.quote .wrap{grid-template-columns:1fr;text-align:center;justify-items:center}}
+.cta{text-align:center;display:grid;justify-items:center;gap:18px;padding:64px 24px;border-radius:28px;background:radial-gradient(70% 90% at 50% 0%,rgba(255,90,31,.28),transparent 70%),var(--card);border:1px solid var(--line)}
+.cta h2{font-size:clamp(48px,7vw,96px)}
+.cta h2 b{color:var(--hot);font-weight:400}
+.cta p{color:var(--muted);font-size:18px;max-width:30em}
+.btn-big{min-height:62px;padding:0 34px;font-size:16px}
+.btn-big svg{width:24px;height:24px}
+.info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;gap:12px;align-content:start}
+.box h3{font-size:30px}
+.rows div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line)}
+.rows div:last-child{border:0}.rows span{color:var(--muted)}
+@media (max-width:760px){.info{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding-block:28px 100px;color:var(--muted);font-size:14px;text-align:center}
+footer a{color:var(--hot);font-weight:700}
+.fwa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#1C9B4F;color:#fff;display:grid;place-items:center;z-index:30;box-shadow:0 10px 24px -8px rgba(0,0,0,.7)}
+.fwa svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+<div class="demo">Modelo de demonstração · <a href="https://www.ocoronato.com.br" target="_blank" rel="noopener">Quero um site assim</a></div>
+<header><div class="wrap nav">
+  <a class="logo" href="#">RITMO<b>FIT</b></a>
+  <ul><li><a href="#sobre">A academia</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#planos">Planos</a></li><li><a href="#contato">Contato</a></li></ul>
+  <a class="btn btn-hot" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Ritmo%20Fit." target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<section class="hero" aria-label="Início"><div class="wrap">
+  <p class="tag">Treino · Disciplina · Resultado</p>
+  <h1>Ritmo Fit</h1>
+  <p class="lead">Musculação, funcional e pilates com professor na sala o tempo todo. Chame no WhatsApp e venha conhecer a estrutura.</p>
+  <div class="ctas"><a class="btn btn-hot" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Ritmo%20Fit." target="_blank" rel="noopener">Falar no WhatsApp</a><a class="btn btn-line" href="#planos">Ver planos</a></div>
+</div></section>
+
+<div class="wrap"><div class="stats">
+  <div><b>4,9</b><span>nota no Google</span></div>
+  <div><b>300+</b><span>alunos ativos</span></div>
+  <div><b>16h</b><span>aberta por dia</span></div>
+  <div><b>2</b><span>professores por turno</span></div>
+</div></div>
+
+<section id="sobre"><div class="wrap">
+  <div class="head"><h2>Por que treinar na <b>Ritmo</b></h2><p>Estrutura completa, gente que entende de treino e um ambiente que dá vontade de voltar no dia seguinte.</p></div>
+  <div class="why">
+    <article><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg><h3>Professor na sala</h3><p>Educadores físicos o tempo todo para corrigir a postura e montar seu treino.</p></article>
+    <article><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg><h3>Treino no celular</h3><p>Sua ficha no aplicativo, com vídeo de cada exercício e a sua evolução.</p></article>
+    <article><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg><h3>Climatizada</h3><p>Ar-condicionado, vestiário com chuveiro e estacionamento na frente.</p></article>
+  </div>
+</div></section>
+
+<section id="modalidades" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Modalidades</h2><p>Escolha a sua ou combine várias no mesmo plano.</p></div>
+  <div class="mods">
+    <article class="mod" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=70')"><div><h3>Musculação</h3><p>Força e hipertrofia com aparelhos novos.</p></div></article>
+    <article class="mod" style="background-image:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=700&q=70')"><div><h3>Funcional</h3><p>Aulas em grupo, cheias de energia.</p></div></article>
+    <article class="mod" style="background-image:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=700&q=70')"><div><h3>Cardio</h3><p>Esteiras, bikes e escada.</p></div></article>
+    <article class="mod" style="background-image:url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=700&q=70')"><div><h3>Pilates</h3><p>Postura, mobilidade e menos dor.</p></div></article>
+  </div>
+</div></section>
+
+<section id="planos" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Planos</h2><p>Todos incluem professor na sala e treino no aplicativo. Sem taxa de matrícula.</p></div>
+  <div class="plans">
+    <article class="plan"><h3>3x na semana</h3><p class="pr">R$ 89<small> /mês</small></p><ul><li>Você escolhe os dias</li><li>Musculação e cardio</li><li>Avaliação física</li></ul><a class="btn btn-line" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20o%20plano%203x%20na%20semana." target="_blank" rel="noopener">Quero este</a></article>
+    <article class="plan hot"><span class="badge">Mais escolhido</span><h3>Livre</h3><p class="pr">R$ 109<small> /mês</small></p><ul><li>Todos os dias, quantas vezes quiser</li><li>Musculação e cardio</li><li>Avaliação física a cada 3 meses</li></ul><a class="btn btn-hot" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20o%20plano%20Livre." target="_blank" rel="noopener">Quero este</a></article>
+    <article class="plan"><h3>Livre + aulas</h3><p class="pr">R$ 149<small> /mês</small></p><ul><li>Tudo do plano Livre</li><li>Funcional e pilates à vontade</li><li>Acompanhamento mensal</li></ul><a class="btn btn-line" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20o%20plano%20Livre%20%2B%20aulas." target="_blank" rel="noopener">Quero este</a></article>
+  </div>
+</div></section>
+
+<section class="quote" aria-label="Depoimento"><div class="wrap">
+  <div class="av" role="img" aria-label="Foto ilustrativa"></div>
+  <div><blockquote>“Comecei por indicação do médico, por causa da coluna. Hoje treino quatro vezes por semana e não sinto mais dor.”</blockquote><cite>Depoimento ilustrativo · aluna há 3 anos</cite></div>
+</div></section>
+
+<section id="contato"><div class="wrap">
+  <div class="cta">
+    <h2>Bora <b>treinar?</b></h2>
+    <p>Tire suas dúvidas sobre planos, horários e modalidades direto com a gente no WhatsApp.</p>
+    <a class="btn btn-hot btn-big" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20planos%20da%20Ritmo%20Fit." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg>Chamar no WhatsApp</a>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap info">
+  <div class="box"><h3>Onde estamos</h3><p>Rua Exemplo, 250 · Centro · Pérola, PR</p><p style="color:var(--muted)">Estacionamento gratuito na frente.</p><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Centro%20P%C3%A9rola%20PR" target="_blank" rel="noopener">Como chegar</a></div>
+  <div class="box"><h3>Horário</h3><div class="rows"><div><span>Segunda a sexta</span><b>5h30 às 22h</b></div><div><span>Sábado</span><b>8h às 12h</b></div><div><span>Domingo e feriados</span><b>Fechado</b></div></div></div>
+</div></section>
+
+<footer>Ritmo Fit é um exemplo fictício · Site por <a href="https://www.ocoronato.com.br" target="_blank" rel="noopener">Felipe Coronato</a></footer>
+<a class="fwa" href="https://wa.me/5544997128291?text=Ol%C3%A1!%20Vi%20o%20exemplo%20da%20academia%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg></a>
+</body>
+</html>

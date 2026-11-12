@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="Felipe Coronato | Sites e cardápios digitais">
-<meta property="og:description" content="Sites e cardápios digitais para comércios de Pérola e região, com preço de portfólio.">
+<meta property="og:title" content="Felipe Coronato | Sites para comércios de Pérola e região">
+<meta property="og:description" content="Sites para qualquer comércio de Pérola e região, com preço de portfólio.">
 <meta property="og:image" content="https://www.ocoronato.com.br/img/icone.png">
-<title>Felipe Coronato | Sites e cardápios digitais em Pérola e região</title>
-<meta name="description" content="Sites e cardápios digitais para comércios de Pérola e região: rápidos no celular, prontos para o Google e com pedido direto no WhatsApp.">
+<title>Felipe Coronato | Sites para comércios de Pérola e região</title>
+<meta name="description" content="Sites para comércios de Pérola e região: barbearias, academias, lojas, pet shops, clínicas e lanchonetes. Rápidos no celular, prontos para o Google e com o cliente chamando no WhatsApp.">
 <link rel="icon" href="img/icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,6 +89,26 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rg
 .wa-card .top small{margin-left:auto;font-weight:500;color:#8696A0}
 .wa-card .msg{margin:10px;background:#005C4B;border-radius:10px 10px 2px 10px;padding:10px 12px;font:500 11.5px/1.5 var(--f-body);color:#E9EDEF;white-space:pre-line}
 .wa-card .msg b{color:#fff}
+.stage-col{display:grid;gap:22px;justify-items:center;min-width:0;width:100%}
+.stage{width:100%}
+.laptop{position:relative;width:100%;max-width:620px}
+.lid{background:linear-gradient(160deg,#2A3346,#0D121C);border-radius:18px 18px 6px 6px;padding:14px 14px 16px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06),0 0 90px -20px var(--glow);position:relative}
+.lid::before{content:"";position:absolute;top:5px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#3A4458}
+.lscreen{position:relative;aspect-ratio:16/10;max-width:100%;border-radius:6px;overflow:hidden;background:#F6F5F2}
+.lscreen iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0}
+.base{height:16px;margin:0 -7%;background:linear-gradient(#3B465B,#161C28);border-radius:2px 2px 16px 16px;position:relative;box-shadow:0 18px 30px -12px rgba(0,0,0,.8)}
+.base::before{content:"";position:absolute;top:0;left:50%;width:18%;height:6px;transform:translateX(-50%);background:#232B3B;border-radius:0 0 8px 8px}
+.laptop .tap{top:-14px;right:-6px}
+@media (min-width:981px){.hero.dev-pc .wrap{grid-template-columns:.95fr 1.05fr}.hero.dev-pc .wa-card{left:auto;right:-14px;bottom:-34px;width:230px}}
+@media (max-width:980px){.hero.dev-pc .wa-card{display:none}}
+.device{display:inline-flex;padding:4px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid #2A3650;gap:4px}
+.device button{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#C9D2E1;border-radius:999px;padding:9px 18px;font:700 14px/1 var(--f-body);cursor:pointer}
+.device button svg{width:17px;height:17px}
+.device button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
+.switch{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;position:relative;z-index:4}
+.switch button{border:1px solid #2A3650;background:rgba(255,255,255,.03);color:#C9D2E1;border-radius:999px;padding:9px 16px;font:600 14px/1 var(--f-body);cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.switch button:hover{border-color:#fff;color:#fff}
+.switch button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
 @media (max-width:980px){.hero .wrap{grid-template-columns:1fr;gap:64px}.wa-card{left:auto;right:-6px;bottom:-26px}}
 @media (max-width:420px){.wa-card{width:210px;right:-4px}.tap{right:-4px}}
 
@@ -144,6 +164,20 @@ section.block{padding-block:110px}
 .steps-mini b{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--blue);font:700 18px/1 var(--f-display)}
 .steps-mini span{color:#D3DAE6}
 @media (max-width:900px){.demo{grid-template-columns:1fr;padding:32px 24px}}
+
+/* examples */
+.examples{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ex{display:flex;flex-direction:column;text-decoration:none;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--card);min-width:0;transition:transform .2s ease,border-color .2s ease}
+.ex:hover{transform:translateY(-4px);border-color:#2F4370}
+.ex-top{display:grid;gap:6px;padding:26px 22px;min-height:150px;align-content:end;background:var(--c1);color:#fff;position:relative;overflow:hidden}
+.ex-top::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:var(--c2);opacity:.35}
+.ex-top small{font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8;position:relative}
+.ex-top b{font:800 24px/1.1 var(--f-display);letter-spacing:-.02em;position:relative}
+.ex-body{display:grid;gap:14px;padding:20px 22px 22px;color:var(--muted);font-size:15px;flex:1;align-content:space-between}
+.ex-body i{font-style:normal;font-weight:700;color:var(--blue-2);display:flex;align-items:center;gap:8px}
+.ex-body svg{width:18px;height:18px}
+@media (max-width:1000px){.examples{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.examples{grid-template-columns:1fr}}
 
 /* services */
 .services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -216,7 +250,7 @@ footer a:hover{color:var(--white)}
     <a class="brand" href="#topo"><img src="img/logo-fc.png" alt="FC" width="61" height="26"><span>Felipe Coronato</span></a>
     <ul>
       <li><a href="#precos">Preços</a></li>
-      <li><a href="#teste">Teste ao vivo</a></li>
+      <li><a href="#exemplos">Exemplos</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#duvidas">Dúvidas</a></li>
     </ul>
@@ -228,34 +262,46 @@ footer a:hover{color:var(--white)}
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <span class="badge"><i></i>Sites e cardápios digitais em Pérola e região</span>
+        <span class="badge"><i></i>Sites para comércios de Pérola e região</span>
         <h1>Seu cliente procura no Google. Ele precisa <span class="blue">achar você.</span></h1>
-        <p class="lead">Faço sites e cardápios digitais para comércios da região: rápidos no celular, prontos para aparecer no Google e com o pedido chegando direto no seu WhatsApp.</p>
+        <p class="lead">Faço sites para qualquer tipo de comércio: barbearias, academias, lojas, pet shops, clínicas, lanchonetes. Rápidos no celular, prontos para aparecer no Google e com o cliente chamando direto no seu WhatsApp.</p>
         <div class="ctas">
           <a class="btn btn-blue" data-wa="Olá Felipe! Quero um site para o meu negócio." href="https://wa.me/5544997128291" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Quero meu site</a>
-          <a class="btn btn-line" href="cardapio-exemplo/index.html" target="_blank" rel="noopener">Testar o cardápio de exemplo<svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="#exemplos">Ver exemplos funcionando<svg><use href="#i-arrow"/></svg></a>
         </div>
         <div class="facts">
           <div><strong>3 dias</strong><span>para a página ficar pronta</span></div>
-          <div><strong>R$ 0</strong><span>de taxa por pedido</span></div>
+          <div><strong>R$ 0</strong><span>de mensalidade obrigatória</span></div>
           <div><strong>2h</strong><span>para eu te responder</span></div>
         </div>
       </div>
 
-      <div class="stage">
-        <div class="phone">
-          <span class="tap">Toque e teste</span>
-          <div class="notch" aria-hidden="true"></div>
-          <div class="screen"><iframe src="cardapio-exemplo/index.html" title="Cardápio digital de exemplo funcionando" loading="lazy"></iframe></div>
+      <div class="stage-col">
+        <div class="stage">
+          <div class="phone">
+            <span class="tap">Toque e teste</span>
+            <div class="notch" aria-hidden="true"></div>
+            <div class="screen"><iframe id="exFrame" src="exemplos/barbearia/index.html" title="Exemplo de site funcionando no celular" loading="lazy"></iframe></div>
+          </div>
+          <div class="laptop" hidden>
+            <span class="tap">Clique e teste</span>
+            <div class="lid"><div class="lscreen" id="lscreen"><iframe id="exFrameDesk" title="Exemplo de site funcionando no computador" loading="lazy"></iframe></div></div>
+            <div class="base" aria-hidden="true"></div>
+          </div>
+          <div class="wa-card" aria-hidden="true">
+            <div class="top"><svg><use href="#i-wa"/></svg><span id="exWaTit">Novo agendamento</span><small>agora</small></div>
+            <div class="msg" id="exWaMsg"></div>
+          </div>
         </div>
-        <div class="wa-card" aria-hidden="true">
-          <div class="top"><svg><use href="#i-wa"/></svg>Novo pedido<small>agora</small></div>
-          <div class="msg"><b>Pedido - Burguer da Esquina</b>
-2x X-Bacon - R$ 59,80
-1x Coca-Cola 2L - R$ 14,00
-<b>Total: R$ 78,80</b>
-Entregar em: Rua A, 10 - Centro
-Pagamento: Pix</div>
+        <div class="device" role="group" aria-label="Ver como fica no celular ou no computador">
+          <button type="button" data-dev="celular" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>Celular</button>
+          <button type="button" data-dev="computador" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>Computador</button>
+        </div>
+        <div class="switch" role="group" aria-label="Escolha um exemplo">
+          <button type="button" data-ex="barbearia" aria-pressed="true">Barbearia</button>
+          <button type="button" data-ex="academia" aria-pressed="false">Academia</button>
+          <button type="button" data-ex="petshop" aria-pressed="false">Pet shop</button>
+          <button type="button" data-ex="lanchonete" aria-pressed="false">Hamburgueria</button>
         </div>
       </div>
     </div>
@@ -275,27 +321,16 @@ Pagamento: Pix</div>
         <p>Os primeiros clientes de Pérola e região pagam bem abaixo do valor normal, em troca de eu poder mostrar o site que fiz para eles. Pagamento único: metade para começar, metade na entrega.</p>
       </div>
       <div class="plans">
-        <article class="plan">
-          <span class="tag">Serviços</span>
-          <div><h3>Página do seu negócio</h3><p class="for">Barbearia, salão, academia, pet shop, clínica, oficina, loja.</p></div>
+        <article class="plan hot">
+          <span class="tag">Mais pedido</span>
+          <div><h3>Página do seu negócio</h3><p class="for">Barbearia, salão, academia, pet shop, clínica, oficina, loja. Qualquer comércio.</p></div>
           <div class="price"><s>R$ 297</s><strong>R$ 197</strong><small>pagamento único · pronto em até 3 dias</small></div>
           <ul>
             <li><svg><use href="#i-check"/></svg>Fotos, serviços, preços, horário e mapa</li>
-            <li><svg><use href="#i-check"/></svg>Botão para agendar ou chamar no WhatsApp</li>
+            <li><svg><use href="#i-check"/></svg>Agendamento ou orçamento direto no WhatsApp</li>
             <li><svg><use href="#i-check"/></svg>Perfil do Google completo e atualizado</li>
           </ul>
-          <a class="btn btn-dark" data-wa="Olá Felipe! Quero a Página do meu negócio no preço de portfólio." href="https://wa.me/5544997128291" target="_blank" rel="noopener">Quero esta</a>
-        </article>
-        <article class="plan hot">
-          <span class="tag">Mais pedido</span>
-          <div><h3>Cardápio digital no WhatsApp</h3><p class="for">Lanchonete, pizzaria, açaí, marmitaria, delivery em geral.</p></div>
-          <div class="price"><s>R$ 597</s><strong>R$ 297</strong><small>pagamento único · pronto em até 5 dias</small></div>
-          <ul>
-            <li><svg><use href="#i-check"/></svg>Até 40 produtos com foto, preço e descrição</li>
-            <li><svg><use href="#i-check"/></svg>Pedido chega pronto no seu WhatsApp, com total e endereço</li>
-            <li><svg><use href="#i-check"/></svg>Sem mensalidade e sem taxa por pedido</li>
-          </ul>
-          <a class="btn btn-blue" data-wa="Olá Felipe! Quero o Cardápio digital no preço de portfólio." href="https://wa.me/5544997128291" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Quero este</a>
+          <a class="btn btn-blue" data-wa="Olá Felipe! Quero a Página do meu negócio no preço de portfólio." href="https://wa.me/5544997128291" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Quero esta</a>
         </article>
         <article class="plan">
           <span class="tag">Completo</span>
@@ -308,6 +343,17 @@ Pagamento: Pix</div>
           </ul>
           <a class="btn btn-dark" data-wa="Olá Felipe! Quero o Site profissional no preço de portfólio." href="https://wa.me/5544997128291" target="_blank" rel="noopener">Quero este</a>
         </article>
+        <article class="plan">
+          <span class="tag">Delivery</span>
+          <div><h3>Cardápio digital no WhatsApp</h3><p class="for">Lanchonete, pizzaria, açaí, marmitaria, delivery em geral.</p></div>
+          <div class="price"><s>R$ 597</s><strong>R$ 297</strong><small>pagamento único · pronto em até 5 dias</small></div>
+          <ul>
+            <li><svg><use href="#i-check"/></svg>Até 40 produtos com foto, preço e descrição</li>
+            <li><svg><use href="#i-check"/></svg>Pedido chega pronto no seu WhatsApp, com total e endereço</li>
+            <li><svg><use href="#i-check"/></svg>Sem mensalidade e sem taxa por pedido</li>
+          </ul>
+          <a class="btn btn-dark" data-wa="Olá Felipe! Quero o Cardápio digital no preço de portfólio." href="https://wa.me/5544997128291" target="_blank" rel="noopener">Quero este</a>
+        </article>
       </div>
       <div class="deal">
         <p><b>Manutenção opcional: R$ 79/mês.</b> Troco preço, foto e horário sempre que você pedir no WhatsApp.</p>
@@ -316,22 +362,29 @@ Pagamento: Pix</div>
     </div>
   </section>
 
-  <section class="block" id="teste">
+  <section class="block" id="exemplos">
     <div class="wrap">
-      <div class="demo">
-        <div>
-          <p class="eyebrow">Teste ao vivo</p>
-          <h2>Faça um pedido de teste agora mesmo.</h2>
-          <p>Este é o cardápio de exemplo de uma hamburgueria. Escolha os lanches, preencha os dados e envie: o pedido chega pronto no meu WhatsApp, do jeito que chegaria no seu.</p>
-          <div class="ctas">
-            <a class="btn btn-blue" href="cardapio-exemplo/index.html" target="_blank" rel="noopener">Abrir o cardápio de exemplo<svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-        <ol class="steps-mini">
-          <li><b>1</b><span>O cliente abre o link da sua bio ou do seu status</span></li>
-          <li><b>2</b><span>Escolhe os produtos, a entrega e a forma de pagamento</span></li>
-          <li><b>3</b><span>O pedido chega no seu WhatsApp, pronto para preparar</span></li>
-        </ol>
+      <div class="head">
+        <div><p class="eyebrow">Exemplos funcionando</p><h2>Abra no celular e teste como se fosse cliente.</h2></div>
+        <p>São modelos de demonstração. Agende um horário ou faça um pedido: a mensagem chega pronta no meu WhatsApp, do jeito que chegaria no seu.</p>
+      </div>
+      <div class="examples">
+        <a class="ex" href="exemplos/barbearia/index.html" target="_blank" rel="noopener" style="--c1:#1C2A44;--c2:#C8372D">
+          <span class="ex-top"><small>Barbearia</small><b>Dom Corte</b></span>
+          <span class="ex-body"><span>Agendamento de corte e barba com dia e horário</span><i>Abrir exemplo <svg><use href="#i-arrow"/></svg></i></span>
+        </a>
+        <a class="ex" href="exemplos/academia/index.html" target="_blank" rel="noopener" style="--c1:#0F2A4A;--c2:#FF6B2C">
+          <span class="ex-top"><small>Academia</small><b>Ritmo Fit</b></span>
+          <span class="ex-body"><span>Modalidades, planos e contato direto no WhatsApp</span><i>Abrir exemplo <svg><use href="#i-arrow"/></svg></i></span>
+        </a>
+        <a class="ex" href="exemplos/petshop/index.html" target="_blank" rel="noopener" style="--c1:#0E7C66;--c2:#FFD166">
+          <span class="ex-top"><small>Pet shop</small><b>Pet Feliz</b></span>
+          <span class="ex-body"><span>Banho e tosa com preço por porte e agendamento</span><i>Abrir exemplo <svg><use href="#i-arrow"/></svg></i></span>
+        </a>
+        <a class="ex" href="exemplos/hamburgueria/index.html" target="_blank" rel="noopener" style="--c1:#D9480F;--c2:#FFE3D3">
+          <span class="ex-top"><small>Hamburgueria</small><b>Burguer da Esquina</b></span>
+          <span class="ex-body"><span>Site com combos e cardápio digital com pedido no WhatsApp</span><i>Abrir exemplo <svg><use href="#i-arrow"/></svg></i></span>
+        </a>
       </div>
     </div>
   </section>
@@ -344,8 +397,8 @@ Pagamento: Pix</div>
       </div>
       <div class="services">
         <article class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div><h3>Criação de sites</h3><p>Site rápido, feito primeiro para o celular, que explica o que você faz e leva o visitante para o WhatsApp.</p></article>
-        <article class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 6h4M9 11h6M9 15h4"/></svg></div><h3>Cardápio digital</h3><p>O cliente monta o pedido sozinho e ele chega pronto no seu WhatsApp. Sem aplicativo e sem comissão.</p></article>
         <article class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Google Meu Negócio</h3><p>Sua empresa no Google Maps com fotos, horário, telefone e avaliações, para quem procura perto de você.</p></article>
+        <article class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14h3"/></svg></div><h3>Agendamento e pedidos</h3><p>Seu cliente agenda horário, pede orçamento ou monta o pedido pelo site, e tudo chega pronto no seu WhatsApp.</p></article>
         <article class="svc"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L22 14l-8 8-2.3-2.3a4 4 0 0 0-5-5L2 10l8-8Z"/></svg></div><h3>Manutenção</h3><p>Mudou o preço, o horário ou o cardápio? Me manda no WhatsApp que eu atualizo para você.</p></article>
       </div>
     </div>
@@ -414,6 +467,39 @@ Pagamento: Pix</div>
     a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(a.getAttribute("data-wa"));
   });
   document.getElementById("ano").textContent = new Date().getFullYear();
+
+  var EX = {
+    barbearia: { src: "exemplos/barbearia/index.html", tit: "Novo agendamento", msg: "<b>Agendamento - Dom Corte</b>\nServiço: Corte + barba (R$ 60)\nDia: Sex, 14/11\nHorário: 18:00\nNome: João Silva" },
+    academia: { src: "exemplos/academia/index.html", tit: "Nova mensagem", msg: "<b>Olá! Quero saber mais sobre os planos da Ritmo Fit.</b>\nTenho interesse no plano Livre e queria conhecer a academia essa semana." },
+    petshop: { src: "exemplos/petshop/index.html", tit: "Novo agendamento", msg: "<b>Agendamento - Pet Feliz</b>\nServiço: Banho porte pequeno (R$ 45)\nDia: Sáb, 15/11\nHorário: 09:00\nNome: Carla\nPet: Thor, shih-tzu" },
+    lanchonete: { src: "exemplos/hamburgueria/index.html", tit: "Novo pedido", msg: "<b>Pedido - Burguer da Esquina</b>\n2x X-Bacon - R$ 59,80\n1x Coca-Cola 2L - R$ 14,00\n<b>Total: R$ 78,80</b>\nEntregar em: Rua A, 10 - Centro\nPagamento: Pix" }
+  };
+  var atual = "barbearia", dev = "celular";
+  var lscreen = document.getElementById("lscreen"), fDesk = document.getElementById("exFrameDesk");
+  function escala() { var w = lscreen.clientWidth; if (w) fDesk.style.transform = "scale(" + (w / 1280) + ")"; }
+  if (window.ResizeObserver) new ResizeObserver(escala).observe(lscreen); else window.addEventListener("resize", escala);
+  function poeDispositivo(d) {
+    dev = d;
+    var pc = d === "computador";
+    document.querySelector(".phone").hidden = pc;
+    document.querySelector(".laptop").hidden = !pc;
+    document.querySelector(".hero").classList.toggle("dev-pc", pc);
+    if (pc && fDesk.getAttribute("src") !== EX[atual].src) fDesk.src = EX[atual].src;
+    document.querySelectorAll("[data-dev]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-dev") === d)); });
+    escala();
+  }
+  document.querySelectorAll("[data-dev]").forEach(function (b) { b.addEventListener("click", function () { poeDispositivo(b.getAttribute("data-dev")); }); });
+  function mostra(k) {
+    var e = EX[k];
+    atual = k;
+    document.getElementById("exFrame").src = e.src;
+    if (dev === "computador") fDesk.src = e.src;
+    document.getElementById("exWaTit").textContent = e.tit;
+    document.getElementById("exWaMsg").innerHTML = e.msg;
+    document.querySelectorAll("[data-ex]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-ex") === k)); });
+  }
+  document.getElementById("exWaMsg").innerHTML = EX.barbearia.msg;
+  document.querySelectorAll("[data-ex]").forEach(function (b) { b.addEventListener("click", function () { mostra(b.getAttribute("data-ex")); }); });
 </script>
 </body>
 </html>
